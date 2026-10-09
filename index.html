@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>fastct — projects</title>
+  <meta name="description" content="Games, learning tools and other web things built by fastct. CrazyLab, Duel.gold and Bubble Arena.">
+  <meta name="theme-color" content="#0038ff">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:title" content="fastct — projects">
+  <meta property="og:description" content="Web things you can play, learn and duel with.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fastct.dev/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#work">Skip to projects</a>
+
+  <header class="site-header">
+    <a class="logo" href="/" aria-label="fastct home">
+      <span class="logo-mark" aria-hidden="true"></span>fastct
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow reveal">Independent web projects</p>
+        <h1 class="hero-title reveal">
+          I make web things you can <em>play,</em> <em>learn</em> &amp; <em>duel</em> with.
+        </h1>
+        <div class="hero-foot reveal">
+          <p class="hero-sub">Three live projects. More in the oven.</p>
+          <a class="scroll-cue" href="#work" aria-label="Scroll to projects">
+            <span>See the work</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>CrazyLab</span><i>✺</i><span>Duel.gold</span><i>✺</i><span>Bubble Arena</span><i>✺</i>
+          <span>CrazyLab</span><i>✺</i><span>Duel.gold</span><i>✺</i><span>Bubble Arena</span><i>✺</i>
+          <span>CrazyLab</span><i>✺</i><span>Duel.gold</span><i>✺</i><span>Bubble Arena</span><i>✺</i>
+          <span>CrazyLab</span><i>✺</i><span>Duel.gold</span><i>✺</i><span>Bubble Arena</span><i>✺</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="work" id="work">
+      <div class="section-head reveal">
+        <h2>Recent <em>work</em></h2>
+        <p>Click a card to open the live project.</p>
+      </div>
+
+      <div class="projects">
+        <!--
+          To add a project, copy one <a class="project"> block below.
+          Size: add "project--wide" for a full-width card.
+          Accent: set style="--accent: #hex" for the art panel color.
+        -->
+
+        <!-- CrazyLab -->
+        <a class="project reveal" href="https://crazylab.io" target="_blank" rel="noopener" style="--accent: #ff77cd">
+          <div class="project-art art-lab" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <g class="lab-doc">
+                <rect x="38" y="44" width="58" height="74" rx="8"/>
+                <path d="M50 64h34M50 76h34M50 88h22"/>
+              </g>
+              <path class="lab-arrow" d="M102 82h18m-7-7 7 7-7 7"/>
+              <g class="lab-flask">
+                <path d="M138 46v30l-22 44a8 8 0 0 0 7 12h46a8 8 0 0 0 7-12l-22-44V46"/>
+                <path d="M132 46h32"/>
+                <path class="lab-liquid" d="M124 110h48l6 12a6 6 0 0 1-5 8h-50a6 6 0 0 1-5-8z"/>
+              </g>
+              <circle class="bubble b1" cx="142" cy="112" r="4"/>
+              <circle class="bubble b2" cx="154" cy="116" r="3"/>
+              <circle class="bubble b3" cx="148" cy="118" r="2.5"/>
+            </svg>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3>CrazyLab</h3>
+              <p>Learn what you upload. Turn your own files into study material.</p>
+              <ul class="tags"><li>Learning</li><li>AI</li></ul>
+            </div>
+            <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+          <span class="sr-only">(opens crazylab.io in a new tab)</span>
+        </a>
+
+        <!-- Duel.gold -->
+        <a class="project reveal" href="https://duel.gold" target="_blank" rel="noopener" style="--accent: #ffd23f">
+          <div class="project-art art-duel" aria-hidden="true">
+            <div class="coin">
+              <div class="coin-face coin-front">VS</div>
+              <div class="coin-face coin-back">1v1</div>
+            </div>
+            <span class="duel-side duel-l"></span>
+            <span class="duel-side duel-r"></span>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3>Duel.gold</h3>
+              <p>Invite-only skill duels. You against one other person, winner takes it.</p>
+              <ul class="tags"><li>Competitive</li><li>Invite-only</li></ul>
+            </div>
+            <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+          <span class="sr-only">(opens duel.gold in a new tab)</span>
+        </a>
+
+        <!-- Bubble Arena / Splatter -->
+        <a class="project project--wide reveal" href="https://splatter.onrender.com" target="_blank" rel="noopener" style="--accent: #ff5f04">
+          <div class="project-art art-splat" aria-hidden="true">
+            <div class="tiles">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3>Bubble Arena</h3>
+              <p>Paint the floor. Own the arena. Free-for-all or team matches, online or against bots.</p>
+              <ul class="tags"><li>Multiplayer</li><li>Browser game</li></ul>
+            </div>
+            <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+          <span class="sr-only">(opens splatter.onrender.com in a new tab)</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <p class="about-statement reveal">
+        fastct is where I ship my side projects: <em>games,</em> tools for <em>learning,</em>
+        and whatever I can't stop thinking about this month. Small scope, quick turnaround, real users.
+      </p>
+      <ul class="about-list reveal">
+        <li><strong>Ship it</strong><span>Live in the browser, no installs.</span></li>
+        <li><strong>Keep it small</strong><span>One idea per project, done well.</span></li>
+        <li><strong>Make it fun</strong><span>If it isn't fun to use, it isn't done.</span></li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <h2 class="contact-title reveal">Got an idea? Let's make it <em>real.</em></h2>
+      <a class="contact-btn reveal" href="mailto:hello@fastct.dev">
+        hello@fastct.dev
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span data-year>2026</span> fastct.dev</span>
+    <nav aria-label="Footer">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </footer>
+
+  <div class="cursor" aria-hidden="true">Open ↗</div>
+</body>
+</html>
