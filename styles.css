@@ -53,12 +53,13 @@ em {
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 .skip {
-  position: fixed; left: 1rem; top: -4rem; z-index: 100;
+  position: fixed; left: 1rem; top: 1rem; z-index: 100;
+  transform: translateY(-200%);
   background: var(--gold); color: var(--blue-ink);
   padding: .75rem 1rem; border-radius: 999px; font-weight: 700; text-decoration: none;
-  transition: top .2s;
+  transition: transform .2s;
 }
-.skip:focus { top: 1rem; }
+.skip:focus { transform: none; }
 
 /* ───────────── Header ───────────── */
 .site-header {
@@ -347,29 +348,98 @@ em {
 /* ───────────── About ───────────── */
 .about {
   padding: 0 var(--gutter) clamp(5rem, 10vw, 9rem);
-  display: grid; gap: clamp(2.5rem, 5vw, 4rem);
+}
+.loc {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-weight: 700;
+}
+.loc-dot {
+  width: .6rem; height: .6rem; border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 0 rgb(0 56 255 / .5);
+  animation: pulse-blue 2.2s infinite;
+}
+@keyframes pulse-blue {
+  70% { box-shadow: 0 0 0 .6rem rgb(0 56 255 / 0); }
+  100% { box-shadow: 0 0 0 0 rgb(0 56 255 / 0); }
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+.about-copy { display: grid; gap: 1.25rem; }
+.about-copy p:not(.about-statement) {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: rgb(10 20 64 / .78);
+  max-width: 58ch;
 }
 .about-statement {
   font-weight: 700;
-  font-size: clamp(1.8rem, 4.2vw, 3.75rem);
+  font-size: clamp(1.8rem, 3.6vw, 3.25rem);
   line-height: 1.05; letter-spacing: -0.04em;
-  max-width: 24ch;
+  max-width: 22ch;
   text-wrap: pretty;
+  margin-bottom: .5rem;
 }
 .about-statement em { color: var(--blue); }
-.about-list {
-  list-style: none; padding: 0; margin: 0;
-  display: grid; grid-template-columns: repeat(3, 1fr);
+
+.label {
+  font-size: .85rem; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.contact-card {
+  background: var(--blue); color: var(--white);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 2.6vw, 2.25rem);
+}
+.contact-card .label { color: var(--gold); }
+.nodes { margin: 0; display: grid; }
+.nodes > div {
+  display: grid; gap: .15rem;
+  padding: .85rem 0;
+  border-top: 1.5px solid rgb(255 255 255 / .2);
+}
+.nodes dt { font-size: .8rem; font-weight: 700; opacity: .7; }
+.nodes dd { margin: 0; font-weight: 700; font-size: clamp(1.05rem, 1.5vw, 1.25rem); letter-spacing: -0.02em; overflow-wrap: anywhere; }
+.nodes a {
+  text-decoration: none;
+  background: linear-gradient(var(--gold), var(--gold)) 0 100% / 0 2px no-repeat;
+  transition: background-size .4s var(--ease), color .2s;
+}
+.nodes a:hover { background-size: 100% 2px; color: var(--gold); }
+
+.stack {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: 1.5rem;
   border-top: 2px solid var(--blue);
 }
-.about-list li {
-  display: grid; gap: .35rem;
-  padding: 1.5rem 1.5rem 0 0;
+.stack .label { color: var(--blue); }
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
-.about-list strong {
-  font-weight: 800; font-size: 1.35rem; letter-spacing: -0.03em; color: var(--blue);
+.stack-group h4 {
+  margin: 0 0 .85rem;
+  font-weight: 800; font-size: 1.2rem; letter-spacing: -0.03em;
 }
-.about-list span { color: rgb(10 20 64 / .7); }
+.chips {
+  display: flex; flex-wrap: wrap; gap: .4rem;
+  list-style: none; padding: 0; margin: 0;
+}
+.chips li {
+  font-size: .9rem; font-weight: 600;
+  padding: .35rem .8rem; border-radius: 999px;
+  background: var(--white);
+  border: 1.5px solid rgb(0 56 255 / .18);
+  transition: background-color .25s, color .25s, border-color .25s;
+}
+.chips li:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
 
 /* ───────────── Contact ───────────── */
 .contact {
@@ -454,13 +524,14 @@ em {
 /* ───────────── Responsive ───────────── */
 @media (max-width: 860px) {
   .project, .project:nth-child(1), .project:nth-child(2) { grid-column: 1 / -1; }
-  .about-list { grid-template-columns: 1fr; }
-  .about-list li { padding: 1.25rem 0; border-bottom: 1.5px solid rgb(0 56 255 / .2); }
+  .about-grid { grid-template-columns: 1fr; }
+  .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 520px) {
   .nav a:not(.nav-cta) { display: none; }
   .project-meta { flex-direction: column; align-items: flex-start; }
   .go { position: absolute; top: 1.4rem; right: 1.4rem; }
+  .stack-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
