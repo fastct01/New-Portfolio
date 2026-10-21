@@ -3,32 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>crazylab.io — projects</title>
-  <meta name="description" content="Games, learning tools and other web things built by crazylab.io. CrazyLab, Duel.gold and Bubble Arena.">
-  <meta name="theme-color" content="#0038ff">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Osmos Studio — independent projects</title>
+  <meta name="description" content="Osmos Studio builds independent apps and games: CrazyLab, Playground.gg and Bubble Arena.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/favicon.png" type="image/png">
 
-  <meta property="og:title" content="crazylab.io — projects">
-  <meta property="og:description" content="Web things you can play, learn and duel with.">
+  <meta property="og:title" content="Osmos Studio">
+  <meta property="og:description" content="Independent apps and games.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://crazylab.io/">
+  <meta property="og:image" content="https://crazylab.io/assets/og.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Michroma&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <script src="/main.js" defer></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="/hero.js"></script>
 </head>
 <body>
-  <a class="skip" href="#work">Skip to projects</a>
+  <a class="skip" href="#apps">Skip to projects</a>
 
   <header class="site-header">
-    <a class="logo" href="/" aria-label="fastct home">
-      <span class="logo-mark" aria-hidden="true"></span>fastct
+    <a class="logo" href="/" aria-label="Osmos Studio home">
+      <img class="logo-mark" src="/assets/osmos-mark.png" alt="" width="820" height="820">
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
+      <a href="#apps">Apps</a>
+      <a href="#games">Games</a>
+      <a href="#developers">Developers</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </nav>
   </header>
@@ -36,64 +47,43 @@
   <main>
     <!-- HERO -->
     <section class="hero">
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-grain" aria-hidden="true"></div>
+
       <div class="hero-inner">
-        <p class="eyebrow reveal">Independent web projects</p>
-        <h1 class="hero-title reveal">
-          I make web things, <em>games</em> and <em>projects</em> I like.
-        </h1>
+        <div class="brand reveal">
+          <img class="brand-mark" src="/assets/osmos-mark.png" alt="" width="820" height="820">
+          <h1 class="brand-name">Osmos <span>Studio</span></h1>
+        </div>
+
         <div class="hero-foot reveal">
           <p class="hero-sub">Three live projects. More in the oven.</p>
-          <a class="scroll-cue" href="#work" aria-label="Scroll to projects">
+          <a class="scroll-cue" href="#apps" aria-label="Scroll to projects">
             <span>See the work</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
           </a>
         </div>
       </div>
-
-      <!-- Marquee hidden for now; styles still in styles.css
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>CrazyLab</span><i>✺</i><span>Duel.gold</span><i>✺</i><span>Bubble Arena</span><i>✺</i>
-          <span>CrazyLab</span><i>✺</i><span>Duel.gold</span><i>✺</i><span>Bubble Arena</span><i>✺</i>
-          <span>CrazyLab</span><i>✺</i><span>Duel.gold</span><i>✺</i><span>Bubble Arena</span><i>✺</i>
-          <span>CrazyLab</span><i>✺</i><span>Duel.gold</span><i>✺</i><span>Bubble Arena</span><i>✺</i>
-        </div>
-      </div>
-      -->
     </section>
 
-    <!-- WORK -->
-    <section class="work" id="work">
+    <!--
+      To add a project, copy one <a class="project"> block below.
+      Width: "project--wide" = full row, "span-5" / "span-7" = partial row (12-column grid).
+      Accent: set style="--accent: #hex" for the art panel color.
+    -->
+
+    <!-- APPS -->
+    <section class="work" id="apps">
       <div class="section-head reveal">
-        <h2>Recent <em>work</em></h2>
-        <p>Click a card to open the live project.</p>
+        <h2>Apps</h2>
+        <p>Click a card to open the live app.</p>
       </div>
 
       <div class="projects">
-        <!--
-          To add a project, copy one <a class="project"> block below.
-          Size: add "project--wide" for a full-width card.
-          Accent: set style="--accent: #hex" for the art panel color.
-        -->
-
         <!-- CrazyLab -->
-        <a class="project reveal" href="https://crazylab.io" target="_blank" rel="noopener" style="--accent: #ff77cd">
-          <div class="project-art art-lab" aria-hidden="true">
-            <svg viewBox="0 0 200 200">
-              <g class="lab-doc">
-                <rect x="38" y="44" width="58" height="74" rx="8"/>
-                <path d="M50 64h34M50 76h34M50 88h22"/>
-              </g>
-              <path class="lab-arrow" d="M102 82h18m-7-7 7 7-7 7"/>
-              <g class="lab-flask">
-                <path d="M138 46v30l-22 44a8 8 0 0 0 7 12h46a8 8 0 0 0 7-12l-22-44V46"/>
-                <path d="M132 46h32"/>
-                <path class="lab-liquid" d="M124 110h48l6 12a6 6 0 0 1-5 8h-50a6 6 0 0 1-5-8z"/>
-              </g>
-              <circle class="bubble b1" cx="142" cy="112" r="4"/>
-              <circle class="bubble b2" cx="154" cy="116" r="3"/>
-              <circle class="bubble b3" cx="148" cy="118" r="2.5"/>
-            </svg>
+        <a class="project project--wide reveal" href="https://crazylab.io" target="_blank" rel="noopener" style="--accent: #ff77cd">
+          <div class="project-art" aria-hidden="true">
+            <img class="shot" src="/assets/previews/crazylab.jpg" alt="" width="1800" height="1125" loading="lazy" decoding="async">
           </div>
           <div class="project-meta">
             <div>
@@ -105,37 +95,37 @@
           </div>
           <span class="sr-only">(opens crazylab.io in a new tab)</span>
         </a>
+      </div>
+    </section>
 
-        <!-- Duel.gold -->
-        <a class="project reveal" href="https://duel.gold" target="_blank" rel="noopener" style="--accent: #ffd23f">
-          <div class="project-art art-duel" aria-hidden="true">
-            <div class="coin">
-              <div class="coin-face coin-front">VS</div>
-              <div class="coin-face coin-back">1v1</div>
-            </div>
-            <span class="duel-side duel-l"></span>
-            <span class="duel-side duel-r"></span>
+    <!-- GAMES -->
+    <section class="work" id="games">
+      <div class="section-head reveal">
+        <h2>Games</h2>
+        <p>Click a card to play.</p>
+      </div>
+
+      <div class="projects">
+        <!-- Playground.gg (link still points at duel.gold until the new domain is live) -->
+        <a class="project span-5 reveal" href="https://duel.gold" target="_blank" rel="noopener" style="--accent: #ffd23f">
+          <div class="project-art" aria-hidden="true">
+            <img class="shot" src="/assets/previews/duel-gold.jpg" alt="" style="--shot-pos: left top" width="1800" height="1125" loading="lazy" decoding="async">
           </div>
           <div class="project-meta">
             <div>
-              <h3>Duel.gold</h3>
+              <h3>Playground.gg</h3>
               <p>Invite-only skill duels. You against one other person, winner takes it.</p>
               <ul class="tags"><li>Competitive</li><li>Invite-only</li></ul>
             </div>
             <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
           </div>
-          <span class="sr-only">(opens duel.gold in a new tab)</span>
+          <span class="sr-only">(opens Playground.gg in a new tab)</span>
         </a>
 
         <!-- Bubble Arena / Splatter -->
-        <a class="project project--wide reveal" href="https://splatter.onrender.com" target="_blank" rel="noopener" style="--accent: #ff5f04">
-          <div class="project-art art-splat" aria-hidden="true">
-            <div class="tiles">
-              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
+        <a class="project span-7 reveal" href="https://splatter.onrender.com" target="_blank" rel="noopener" style="--accent: #ff5f04">
+          <div class="project-art" aria-hidden="true">
+            <img class="shot" src="/assets/previews/bubble-arena.jpg" alt="" width="1800" height="1125" loading="lazy" decoding="async">
           </div>
           <div class="project-meta">
             <div>
@@ -150,81 +140,141 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+    <!-- DEVELOPERS -->
+    <section class="work" id="developers">
       <div class="section-head reveal">
-        <h2>About <em>me</em></h2>
-        <p class="loc"><span class="loc-dot" aria-hidden="true"></span>London · 51.5074° N, 0.1278° W</p>
+        <h2>Developers</h2>
+        <p>The people behind the projects.</p>
       </div>
 
-      <div class="about-grid">
-        <div class="about-copy reveal">
-          <p class="about-statement">
-            I’m a Computer Systems Engineering student mainly focusing on <em>Product Development</em> and <em>Games.</em>
-          </p>
-          <p>
-            I have a strong academic background in algorithms and systems design with a practical interest for clean UI/UX design.
-          </p>
-          <p>
-            I also have an active interest in video games, both playing them and building them, which is where projects like Bubble Arena and Duel.gold come from.
-          </p>
-          <p>
-            Driven by an entrepreneurial mindset, I aim to bridge the gap between technical innovation and market needs, including using AI-driven solutions that are not only mathematically robust but also commercially viable and delightful to use.
-          </p>
-        </div>
+      <div class="devs">
+        <!-- To add a developer, copy this <article class="dev"> block. -->
+        <article class="dev reveal" data-dev>
+          <header class="dev-head">
+            <span class="avatar" aria-hidden="true">IS</span>
+            <div>
+              <h3>Ivan Smirnov</h3>
+              <p class="dev-role">Founder · Developer</p>
+            </div>
+            <p class="loc"><span class="loc-dot" aria-hidden="true"></span>London · 51.5074° N, 0.1278° W</p>
+          </header>
 
-        <aside class="contact-card reveal" aria-label="Contact details">
-          <h3 class="label">Contact</h3>
-          <dl class="nodes">
-            <div><dt>E-mail</dt><dd><a href="mailto:nme3015@gmail.com">nme3015@gmail.com</a></dd></div>
-            <div><dt>Tel</dt><dd><a href="tel:+447311609905">+44 7311 609905</a></dd></div>
-            <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/ivansmirnov" target="_blank" rel="noopener">ivansmirnov</a></dd></div>
-            <div><dt>GitHub</dt><dd><a href="https://github.com/fastct" target="_blank" rel="noopener">fastct</a></dd></div>
-          </dl>
-        </aside>
-      </div>
+          <p class="dev-brief">
+            Computer Systems Engineering student focused on product development and games, with a soft spot for clean UI/UX.
+          </p>
 
-      <div class="stack reveal">
-        <h3 class="label">Technical stack</h3>
-        <div class="stack-grid">
-          <div class="stack-group">
-            <h4>Languages</h4>
-            <ul class="chips"><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>C#</li><li>SQL</li><li>Bash</li></ul>
+          <!-- collapsed until the card is clicked -->
+          <div class="dev-more" id="dev-ivan-more">
+          <div class="dev-more-inner">
+          <div class="dev-more-content">
+
+          <div class="dev-body">
+            <div class="dev-bio">
+              <p class="about-statement">
+                I’m a Computer Systems Engineering student mainly focusing on <em>Product Development</em> and <em>Games.</em>
+              </p>
+              <p>
+                I have a strong academic background in algorithms and systems design with a practical interest for clean UI/UX design.
+              </p>
+              <p>
+                I also have an active interest in video games, both playing them and building them, which is where my game projects come from.
+              </p>
+              <p>
+                Driven by an entrepreneurial mindset, I aim to bridge the gap between technical innovation and market needs, including using AI-driven solutions that are not only mathematically robust but also commercially viable and delightful to use.
+              </p>
+            </div>
+
+            <aside class="contact-card" aria-label="Contact details">
+              <h4 class="label">Contact</h4>
+              <dl class="nodes">
+                <div><dt>E-mail</dt><dd><a href="mailto:nme3015@gmail.com">nme3015@gmail.com</a></dd></div>
+                <div><dt>Tel</dt><dd><a href="tel:+447311609905">+44 7311 609905</a></dd></div>
+                <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/ivansmirnov" target="_blank" rel="noopener">ivansmirnov</a></dd></div>
+                <div><dt>GitHub</dt><dd><a href="https://github.com/fastct" target="_blank" rel="noopener">fastct</a></dd></div>
+              </dl>
+            </aside>
           </div>
-          <div class="stack-group">
-            <h4>Frameworks</h4>
-            <ul class="chips"><li>React</li><li>Vue</li><li>Node.js</li><li>Unity</li></ul>
+
+          <div class="stack">
+            <h4 class="label">Technical stack</h4>
+            <div class="stack-grid">
+              <div class="stack-group">
+                <h5>Languages</h5>
+                <ul class="chips"><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>C#</li><li>SQL</li><li>Bash</li></ul>
+              </div>
+              <div class="stack-group">
+                <h5>Frameworks</h5>
+                <ul class="chips"><li>React</li><li>Vue</li><li>Node.js</li><li>Unity</li></ul>
+              </div>
+              <div class="stack-group">
+                <h5>ML &amp; AI</h5>
+                <ul class="chips"><li>PyTorch</li><li>TensorFlow</li><li>n8n</li><li>LangChain</li><li>Claude Code</li></ul>
+              </div>
+              <div class="stack-group">
+                <h5>Data &amp; Infrastructure</h5>
+                <ul class="chips"><li>PostgreSQL</li><li>Docker</li><li>AWS</li><li>GCP</li></ul>
+              </div>
+            </div>
           </div>
-          <div class="stack-group">
-            <h4>ML &amp; AI</h4>
-            <ul class="chips"><li>PyTorch</li><li>TensorFlow</li><li>n8n</li><li>LangChain</li><li>Claude Code</li></ul>
+
           </div>
-          <div class="stack-group">
-            <h4>Data &amp; Infrastructure</h4>
-            <ul class="chips"><li>PostgreSQL</li><li>Docker</li><li>AWS</li><li>GCP</li></ul>
           </div>
-        </div>
+          </div>
+
+          <button class="dev-toggle" type="button" aria-expanded="false" aria-controls="dev-ivan-more" data-more="More about Ivan">
+            <span data-label>More about Ivan</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </article>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
-      <h2 class="contact-title reveal">Got an idea? Let's make it <em>real.</em></h2>
-      <a class="contact-btn reveal" href="mailto:nme3015@gmail.com">
-        nme3015@gmail.com
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-      </a>
+      <h2 class="contact-title reveal">Got a question? Ask <em>away.</em></h2>
+
+      <button class="ask reveal" type="button" data-open-contact>
+        <span class="ask-placeholder">Type your question…</span>
+        <span class="ask-send" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+      </button>
     </section>
   </main>
 
   <footer class="site-footer">
-    <span>© <span data-year>2026</span> crazylab.io</span>
-    <nav aria-label="Footer">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <span>© <span data-year>2026</span> Osmos Studio</span>
   </footer>
+
+  <!-- Contact modal: opens centred on screen, submits via the visitor's mail app -->
+  <dialog class="modal" id="contact-modal" aria-labelledby="modal-title">
+    <form class="modal-form" data-contact-to="nme3015@gmail.com">
+      <div class="modal-head">
+        <div>
+          <h2 id="modal-title">Send a query</h2>
+          <p>We’ll get back to you by email.</p>
+        </div>
+        <button class="modal-x" type="button" aria-label="Close" data-close-contact>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+
+      <label class="field">
+        <span>Your email</span>
+        <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+      </label>
+
+      <label class="field">
+        <span>Your question</span>
+        <textarea name="message" rows="5" placeholder="What would you like to know?" required></textarea>
+      </label>
+
+      <p class="modal-status" role="status" hidden></p>
+
+      <div class="modal-actions">
+        <button class="btn" type="button" data-close-contact>Cancel</button>
+        <button class="btn btn-primary" type="submit">Send</button>
+      </div>
+    </form>
+  </dialog>
 
   <div class="cursor" aria-hidden="true">Open ↗</div>
 </body>
