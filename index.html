@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Osmos Studio — independent projects</title>
-  <meta name="description" content="Osmos Studio builds independent apps and games: CrazyLab, PlayVault.gg and Bubble Arena.">
+  <meta name="description" content="Osmos Studio builds independent apps and games: CrazyLab, Food Radar, PlayVault.gg, Bubble Arena and Cook &amp; Run.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/favicon.png" type="image/png">
 
@@ -30,15 +30,15 @@
   <script type="module" src="/hero.js"></script>
 </head>
 <body>
-  <a class="skip" href="#apps">Skip to projects</a>
+  <a class="skip" href="#games">Skip to projects</a>
 
   <header class="site-header">
     <a class="logo" href="/" aria-label="Osmos Studio home">
       <img class="logo-mark" src="/assets/osmos-mark.png" alt="" width="820" height="820">
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#apps">Apps</a>
       <a href="#games">Games</a>
+      <a href="#apps">Apps</a>
       <a href="#developers">Developers</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </nav>
@@ -57,8 +57,8 @@
         </div>
 
         <div class="hero-foot reveal">
-          <p class="hero-sub">Three live projects. More in the oven.</p>
-          <a class="scroll-cue" href="#apps" aria-label="Scroll to projects">
+          <p class="hero-sub">Five live projects. More in the oven.</p>
+          <a class="scroll-cue" href="#games" aria-label="Scroll to projects">
             <span>See the work</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
           </a>
@@ -71,32 +71,6 @@
       Width: "project--wide" = full row, "span-5" / "span-7" = partial row (12-column grid).
       Accent: set style="--accent: #hex" for the art panel color.
     -->
-
-    <!-- APPS -->
-    <section class="work" id="apps">
-      <div class="section-head reveal">
-        <h2>Apps</h2>
-        <p>Click a card to open the live app.</p>
-      </div>
-
-      <div class="projects">
-        <!-- CrazyLab -->
-        <a class="project project--wide reveal" href="https://crazylab.io" target="_blank" rel="noopener" style="--accent: #ff77cd">
-          <div class="project-art" aria-hidden="true">
-            <img class="shot" src="/assets/previews/crazylab.jpg" alt="" width="1800" height="1125" loading="lazy" decoding="async">
-          </div>
-          <div class="project-meta">
-            <div>
-              <h3>CrazyLab</h3>
-              <p>Learn what you upload. Turn your own files into study material.</p>
-              <ul class="tags"><li>Learning</li><li>AI</li></ul>
-            </div>
-            <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-          </div>
-          <span class="sr-only">(opens crazylab.io in a new tab)</span>
-        </a>
-      </div>
-    </section>
 
     <!-- GAMES -->
     <section class="work" id="games">
@@ -125,7 +99,7 @@
         <!-- Bubble Arena / Splatter -->
         <a class="project span-7 reveal" href="https://splatter.onrender.com" target="_blank" rel="noopener" style="--accent: #ff5f04">
           <div class="project-art" aria-hidden="true">
-            <img class="shot" src="/assets/previews/bubble-arena.jpg" alt="" width="1800" height="1125" loading="lazy" decoding="async">
+            <img class="shot" src="/assets/previews/bubble-arena.jpg" alt="" style="--shot-pos: center" width="1800" height="1040" loading="lazy" decoding="async">
           </div>
           <div class="project-meta">
             <div>
@@ -136,6 +110,64 @@
             <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
           </div>
           <span class="sr-only">(opens splatter.onrender.com in a new tab)</span>
+        </a>
+
+        <!-- Cook & Run -->
+        <a class="project project--wide reveal" href="https://cook-run.onrender.com" target="_blank" rel="noopener" style="--accent: #e0a92e">
+          <div class="project-art" aria-hidden="true">
+            <img class="shot" src="/assets/previews/cook-run.jpg" alt="" style="--shot-pos: center" width="2400" height="960" loading="lazy" decoding="async">
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3>Cook &amp; Run</h3>
+              <p>A two-player co-op road chase. One drives the RV, one runs the mobile lab in the back. Nobody gets busted.</p>
+              <ul class="tags"><li>Co-op</li><li>Browser game</li></ul>
+            </div>
+            <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+          <span class="sr-only">(opens cook-run.onrender.com in a new tab)</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- APPS -->
+    <section class="work" id="apps">
+      <div class="section-head reveal">
+        <h2>Apps</h2>
+        <p>Click a card to open the live app.</p>
+      </div>
+
+      <div class="projects">
+        <!-- CrazyLab -->
+        <a class="project span-7 reveal" href="https://crazylab.io" target="_blank" rel="noopener" style="--accent: #ff77cd">
+          <div class="project-art" aria-hidden="true">
+            <img class="shot" src="/assets/previews/crazylab.jpg" alt="" style="--shot-pos: center" width="1800" height="1040" loading="lazy" decoding="async">
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3>CrazyLab</h3>
+              <p>Learn what you upload. Turn your own files into study material.</p>
+              <ul class="tags"><li>Learning</li><li>AI</li></ul>
+            </div>
+            <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+          <span class="sr-only">(opens crazylab.io in a new tab)</span>
+        </a>
+
+        <!-- Food Radar -->
+        <a class="project span-5 reveal" href="https://go-eat-1.onrender.com" target="_blank" rel="noopener" style="--accent: #3ddc84">
+          <div class="project-art" aria-hidden="true">
+            <img class="shot" src="/assets/previews/food-radar.jpg" alt="" style="--shot-pos: center" width="1800" height="1440" loading="lazy" decoding="async">
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3>Food Radar</h3>
+              <p>Find the best-rated restaurants in any part of Moscow. Every place gets a fair score out of 10 that weighs its rating against its review count.</p>
+              <ul class="tags"><li>Maps</li><li>Food</li></ul>
+            </div>
+            <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </div>
+          <span class="sr-only">(opens Food Radar in a new tab)</span>
         </a>
       </div>
     </section>
