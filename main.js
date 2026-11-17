@@ -84,7 +84,7 @@ if (modal && typeof modal.showModal === "function") {
     e.preventDefault();
     const email = form.email.value.trim();
     const message = form.message.value.trim();
-    const subject = encodeURIComponent("Query from the Osmos Studio site");
+    const subject = encodeURIComponent("Query from osmos.games");
     const body = encodeURIComponent(`${message}\n\n— ${email}`);
 
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
